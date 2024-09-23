@@ -125,6 +125,8 @@ nav a {
   display: flex;
   padding: 2em 0;
   border-bottom: 1.5px solid var(--light-grey);
+
+  position: relative;
 }
 
 .movie {
@@ -167,5 +169,7 @@ nav a {
 }
 
 span {
-  margin-bottom: auto;
+  position: absolute;
+  bottom: 2em;
+  right: 0;
 }
