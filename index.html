@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie watchlist</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CDN - FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <section class="header-top">
+          <h1>Find your film</h1>
+          <nav>
+            <a href="http://" target="_blank">My Watchlist</a>
+          </nav>
+        </section>
+        <form class="movie-search" action="">
+          <input
+            type="search"
+            name="movie"
+            id="movie-input"
+            class="movie-input"
+            placeholder="Search for a movie"
+            aria-label="Search for a movie"
+          />
+          <button class="search-btn" type="submit" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+    </header>
+    <main>
+      <!-- !!BEFORE THE SEACH STARTS -->
+      <!-- 
+        <i class="fa-solid fa-film background"></i>
+        <p class="main-text background">Start exploring</p>
+       -->
+
+      <!-- !!ERROR MESSAGE .catch -->
+      <!-- <i class="fa-solid fa-face-sad-tear background"></i>
+      <p class="main-text background">
+        Unable to find what you’re looking for. <br />
+        Please try another search.
+      </p> -->
+      <div class="wrapper">
+        <section class="movie-container" id="movie-container">
+          <img class="poster" src="/assets/scarface-banner.jpg" alt="" />
+
+          <div class="movie">
+            <div class="movie-header">
+              <h2 class="movie-title">Blade Runner</h2>
+              <i class="fa-solid fa-star"></i>
+              <p class="rating">8.1</p>
+            </div>
+            <div class="movie-info">
+              <p>117 min</p>
+              <p>Action, Drama, Sci-fi</p>
+              <p><i class="fa-solid fa-circle-plus"></i>Watchlist</p>
+            </div>
+            <p class="plot">
+              A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to
+              Earth to find their creator.
+            </p>
+            <span>Read more</span>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
