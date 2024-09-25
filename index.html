@@ -37,8 +37,8 @@
           <input
             type="search"
             name="movie"
-            id="movie-input"
-            class="movie-input"
+            id="search-input"
+            class="search-input"
             placeholder="Search for a movie"
             aria-label="Search for a movie"
           />
@@ -49,39 +49,14 @@
       </div>
     </header>
     <main>
-      <!-- !!BEFORE THE SEACH STARTS -->
-      <!-- 
+      <div class="main-text" id="main-text">
         <i class="fa-solid fa-film background"></i>
-        <p class="main-text background">Start exploring</p>
-       -->
+        <p class="background">Start exploring</p>
+      </div>
 
-      <!-- !!ERROR MESSAGE .catch -->
-      <!-- <i class="fa-solid fa-face-sad-tear background"></i>
-      <p class="main-text background">
-        Unable to find what you’re looking for. <br />
-        Please try another search.
-      </p> -->
       <div class="wrapper">
         <section class="movie-container" id="movie-container">
-          <img class="poster" src="/assets/scarface-banner.jpg" alt="" />
-
-          <div class="movie">
-            <div class="movie-header">
-              <h2 class="movie-title">Blade Runner</h2>
-              <i class="fa-solid fa-star"></i>
-              <p class="rating">8.1</p>
-            </div>
-            <div class="movie-info">
-              <p>117 min</p>
-              <p>Action, Drama, Sci-fi</p>
-              <p><i class="fa-solid fa-circle-plus"></i>Watchlist</p>
-            </div>
-            <p class="plot">
-              A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to
-              Earth to find their creator.
-            </p>
-          </div>
-          <span>Read more</span>
+          <!-- MOVIE LIST WILL RENDER HERE -->
         </section>
       </div>
     </main>
