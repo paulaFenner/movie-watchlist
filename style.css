@@ -11,6 +11,7 @@ html {
 :root {
   --white: #ffffff;
   --black: #111827;
+  --accent: #8f49ff;
   --dark-grey: #6b7280;
   --light-grey: #e5e7eb;
   --off-white: #d1d5db;
@@ -26,25 +27,31 @@ body {
 /*  TYPOGRAPHY  */
 h1,
 h2,
-p {
+p,
+a {
   margin: 0;
 }
 
 h1 {
-  font-size: 2.75rem;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 p {
   font-size: 0.875rem;
 }
 
+a.background,
 p.background {
-  font-size: 1.125rem;
+  font-size: 1rem;
   margin: 1em;
+}
+
+a.background {
+  color: var(--dark-grey);
 }
 
 p.movie-info {
@@ -54,31 +61,36 @@ p.movie-info {
 /* HEADER  */
 header {
   position: relative;
-  background-image: url('/assets/scarface-banner.jpg');
+  background-image: url('./assets/scarface-banner.jpg');
   background-size: cover;
+  background-position: center;
   color: var(--white);
   box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 }
 
 .wrapper {
-  width: 80%;
+  width: 100%;
+  padding: 0 2.5em;
   max-width: 650px;
   margin: 0 auto;
 }
 
 .header-top {
-  padding: 7em 0;
+  padding: 5em 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 nav a {
-  text-decoration: none;
   color: var(--white);
   font-size: 0.875rem;
   font-weight: 700;
+}
+
+a {
+  text-decoration: none;
 }
 
 .movie-search {
@@ -88,8 +100,8 @@ nav a {
   transform: translate(-50%, 50%);
   display: flex;
   justify-content: center;
-  width: 80%;
-  max-width: 650px; /* Same max-width as .wrapper */
+  width: calc(100% - 4em); /* Adjust for the padding */
+  max-width: 650px;
 }
 
 .search-input {
@@ -118,10 +130,11 @@ nav a {
 .background {
   margin-top: 2em;
   color: var(--off-white);
-  font-size: 4.5rem;
+  font-size: 3rem;
   font-weight: 700;
 }
 
+/* MAIN */
 .movie-container {
   width: 100%;
   display: flex;
@@ -131,27 +144,26 @@ nav a {
 
 .movie-wrapper {
   display: flex;
-  padding: 2em 0;
+  flex-direction: column;
+  padding: 1em 0;
   border-bottom: 1px solid var(--light-grey);
 }
 .movie {
-  padding: 1.75em;
+  padding: 1em 0;
 }
 
 .poster {
-  width: 8rem;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
+  width: 100%;
+  max-width: 200px;
   object-position: center;
+  align-self: center;
 }
 
 .movie-header,
 .movie-info {
   display: flex;
-}
-
-.movie-header {
-  gap: 0.75em;
+  flex-wrap: wrap;
+  gap: 0.5em;
   align-items: center;
 }
 
@@ -163,12 +175,87 @@ nav a {
 .fa-star {
   color: #fec654;
 }
-.fa-circle-plus {
-  margin-right: 0.3em;
-}
 
 .plot {
   color: var(--dark-grey);
   line-height: 1.43;
   text-align: left;
+}
+
+/* BUTTON */
+.fa-circle-plus,
+.fa-circle-minus,
+.fa-circle-check {
+  margin-right: 0.3em;
+}
+
+.add-btn,
+.remove-btn {
+  border: none;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  color: var(--accent);
+}
+.remove-btn:hover {
+  color: red;
+}
+
+/* BREAKPOINTS */
+
+@media (min-width: 500px) {
+  .movie-wrapper {
+    flex-direction: row;
+    padding: 2em 0;
+  }
+
+  .poster {
+    width: 30%;
+    max-width: 150px;
+  }
+
+  .movie {
+    padding: 0 0 0 1.75em;
+    flex: 1;
+  }
+}
+
+@media (min-width: 728px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+
+  .wrapper {
+    width: 80%;
+    max-width: 650px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header-top {
+    padding: 7em 0;
+  }
+
+  .movie-search {
+    width: 80%;
+    max-width: 650px;
+  }
+
+  .background {
+    font-size: 4.5rem;
+  }
 }

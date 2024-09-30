@@ -22,36 +22,22 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <header>
       <div class="wrapper">
         <section class="header-top">
-          <h1>Find your film</h1>
+          <h1>My movie watchlist</h1>
           <nav>
-            <a href="http://" target="_blank">My Watchlist</a>
+            <a href="./index.html"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
           </nav>
-        </section>
-        <form class="movie-search" action="">
-          <input
-            type="search"
-            name="movie"
-            id="search-input"
-            class="search-input"
-            placeholder="Search for a movie"
-            aria-label="Search for a movie"
-          />
-          <button class="search-btn" type="submit" aria-label="Search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
-      </div>
     </header>
     <main>
       <div class="main-text" id="main-text">
-        <i class="fa-solid fa-film background"></i>
-        <p class="background">Start exploring</p>
+        <i class="fa-solid fa-box-archive background"></i>
+        <p class="background">Your watchlist is looking a little empty...</p>
+        <a href="./index.html"class="background">Let's add some movies!</a>
       </div>
 
       <div class="wrapper">
@@ -61,6 +47,6 @@
       </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../javascript/watchlist.js" type="module"></script>
   </body>
 </html>
