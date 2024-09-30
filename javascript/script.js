@@ -15,7 +15,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
 function handleSearchRequest() {
   const searchInput = document.getElementById('search-input');
 
-  fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchInput.value}`)
+  fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchInput.value}`)
     .then((res) => res.json())
     .then((data) => {
       if (data.Response === 'False') {
@@ -24,7 +24,7 @@ function handleSearchRequest() {
       }
       const movieResults = data.Search;
       const promises = movieResults.map((movie) => {
-        return fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${movie.imdbID}`)
+        return fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${movie.imdbID}`)
           .then((res) => res.json())
           .then((movieData) => {
             console.log(movieData);
